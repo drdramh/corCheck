@@ -135,6 +135,9 @@ p {font-size: 18px;}
   background: #4CAF50;
   display: inline-block
 }
+.laptop-ads{display: block;}
+.phone-ads{display: none}
+
 @media only screen and (max-width: 900px) {
   .title-of-question {
     width: 97%;
@@ -153,4 +156,7 @@ p {font-size: 18px;}
   .article-page {
     width: 95%
   }
+  .laptop-ads{display: none}
+  .phone-ads{display: block}
+
 }
