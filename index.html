@@ -1,64 +1,177 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<html dir="ltr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Just minutes and we will return؟</title>
+  <meta charset='UTF-8'/>
+  <title>Corona rating points</title>
+  <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
 
-<link href='layout/image/favicon.png' rel='icon' type='image/x-icon'/>
-<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <link href='https://checkcorona.me/favicon.ico' rel='icon' type='image/x-icon'/>
 
-<style>
 
-html, body {
-  margin: 0;
-  height: 100vh;
-  color: #636b6f;
-  font-weight: 100;
-  background-color: #fff;
-  font-family: 'Nunito', sans-serif
-}
-
-.full-height {
-  height: 100vh;
-}
-
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.position-ref {
-  position: relative;
-}
-
-.code {
-  font-size: 26px;
-  text-align: center;
-  padding: 0 15px 0 15px;
-  border-right: 2px solid;
-}
-
-.message {
-  padding: 10px;
-  font-size: 18px;
-  text-align: center;
-}
-.message a{
-  color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
-  background: #2196F3;
-  text-decoration: none
-}
-
-</style>
+  <meta property="og:title" content="Corona infection detector">
+  <meta property="og:description" content="Corona rating points">
+  <meta property="og:image" content="https://f.top4top.io/p_1544gmcoa1.jpg">
+  <meta property="og:url" content="https://checkcorona.me/">
+  <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <div class="flex-center position-ref full-height">
-  	<div class="code">Just minutes and we will return؟ </div>
+
+  <div class="header">
+    <a href="https://checkcorona.me/"><img alt="Logo Corona" src="logo.png" style="width: 215px;margin-top: 20px;">
+</a>
   </div>
+
+<div id="numberQuestions" class="text-center">
+  <p>Number of questions remaining:  <span id="tmr">9</span> </p>
+</div>
+
+<div id="container" class="form-group"></div>
+
+<div id="hidden">
+
+  <div class="cls text-center">
+    <h3 class="title-of-question text-center">Is your body temperature above 38 C/100.4F?</h3>
+    <button type="button"  onclick="getScore(2)">YES</button>
+    <button type="button"  onclick="getScore(0)">NO</button>
+  </div>
+
+  <div class="cls">
+    <h3 class="title-of-question">Do you have a severe or increased cough?</h3>
+    <button type="button" onclick="getScore(2)">YES</button>
+    <button type="button" onclick="getScore(0)">NO</button>
+  </div>
+
+  <div class="cls">
+    <h3 class="title-of-question">Do you have a severe sore throat?</h3>
+    <button type="button"  onclick="getScore(1)">YES</button>
+    <button type="button"  onclick="getScore(0)">NO</button>
+  </div>
+
+  <div class="cls">
+    <h3 class="title-of-question">Do you have vomiting or diarrhea?</h3>
+    <button type="button"  onclick="getScore(0)">YES</button>
+    <button type="button"  onclick="getScore(0)">NO</button>
+  </div>
+
+  <div class="cls">
+    <h3 class="title-of-question">Is there a chronic disease diabetes, hypertension, liver disease..?</h3>
+    <button type="button"  onclick="getScore(1)">YES</button>
+    <button type="button"  onclick="getScore(0)">NO</button>
+  </div>
+
+  <div class="cls">
+    <h3 class="title-of-question">Have you traveled outside the country?</h3>
+    <button type="button"  onclick="getScore(5)">YES</button>
+    <button type="button"  onclick="getScore(0)">NO</button>
+  </div>
+
+  <div class="cls">
+    <h3 class="title-of-question">Have you had contact with a person with an acute respiratory infection?</h3>
+    <button type="button"  onclick="getScore(4)">YES</button>
+    <button type="button"  onclick="getScore(0)">NO</button>
+  </div>
+
+
+  <div class="cls">
+    <h3 class="title-of-question">Have you visited a hospital or other health place where there is a positive case of coronavirus?</h3>
+    <button type="button"  onclick="getScore(3)">YES</button>
+    <button type="button"  onclick="getScore(0)">NO</button>
+  </div>
+
+  <div class="cls">
+    <h3 class="title-of-question">Are you a healthcare member or work in sanitary sector?</h3>
+    <button type="button"  onclick="getScore(2)">YES</button>
+    <button type="button"  onclick="getScore(0)">NO</button>
+  </div>
+
+  <div class="cls">
+    <p id="pnts"></p>
+    <button type="button" id="result"  onclick="showResult()">Show Result</button>
+  </div>
+
+</div>
+<p id="myp"> Your score so far: <span id="dv">0</span> </p>
+
+<div class="clear"></div>
+
+<!-- <img class="_myads_" src="https://j.top4top.io/p_154580ifc1.png"/> -->
+
+<div class="clear"></div>
+
+<div class="articles text-left">
+
+  <a href="What-is-coronavirus.html">
+    <div class="article-row">
+      <h2>What is coronavirus?</h2><br>
+      <p> According to the WHO, coronaviruses are a family of viruses that cause illnesses ranging from the common cold to more severe diseases such as severe acute respiratory syndrome (SARS) and the Middle East respiratory syndrome (MERS)</p>
+    </div>
+  </a>
+
+  <a href="Five-steps-to-kicking-out-coronavirus.html">
+    <div class="article-row">
+      <h2> Five steps to kicking out coronavirus</h2><br>
+      <p> Geneva, 23 March 2020: FIFA, the international governing body of football, and the World Health Organization (WHO) have teamed up to combat the coronavirus (COVID-19) by launching a new awareness campaign led by world-renowned footballers, who are calling on all people around the world to follow five key steps to stop the spread of the disease. </p>
+    </div>
+  </a>
+
+  <a href="Coronavirus-disease-(COVID-19)-advice-for-the-public.html">
+    <div class="article-row">
+      <h2>Coronavirus disease (COVID-19) advice for the public</h2><br>
+      <p>Stay aware of the latest information on the COVID-19 outbreak, available on the WHO website and through your national and local public health authority. Most people who become infected experience mild illness and recover, but it can be more severe for others...</p>
+    </div>
+  </a>
+
+</div>
+
+
+
+
+<div class="clear"></div>
+
+<footer class="footer">
+  <a href="privacy.html"> Privacy |  </a> <a href="contact.html"> Contact US </a>
+</footer>
+
+<script type="text/javascript">
+  var dv = document.getElementById('dv');
+  var score = 0;
+  var cll = 0;
+  var container = document.getElementById('container');
+  var clss = document.getElementsByClassName('cls');
+
+  container.innerHTML = clss[0].innerHTML;
+
+  function getScore(n){
+    cll = cll + 1;
+    score = score + n;
+    dv.innerHTML = score;
+    container.innerHTML = document.getElementsByClassName("cls")[cll].innerHTML;
+    document.getElementById('tmr').innerHTML =  9 - cll;
+  }
+
+  function showResult(){
+    document.getElementById('result').style.display='none';
+    document.getElementById('numberQuestions').style.display='none';
+
+    if(score < 5 ){
+      document.getElementById('pnts').innerHTML = "<h3>Recommendations for your condition: </h3><div id='result_data' class='title-of-question'>Just stick to the house and make a self-isolation</div><a href='https://checkcorona.me/'>Start again</a>";
+
+    }else if(score == 5 ){
+      document.getElementById('pnts').innerHTML = "<h3>Recommendations for your condition: </h3><div id='result_data' class='title-of-question'><p>Call the doctor now</p></div><a href='https://checkcorona.me/'>Start again</a>";
+    }else if (score > 6 ){
+      document.getElementById('pnts').innerHTML = "<h3>Recommendations for your condition: </h3><div id='result_data' class='title-of-question'><p>You should contact the concerned authorities<br>You may be infected with the virus and need treatment and quarantine</p></div><a href='https://checkcorona.me/'>Start again</a>";
+    }
+  }
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143426757-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143426757-4');
+</script>
 </body>
 </html>
